@@ -36,7 +36,8 @@ INPUTTYPES = [
     'Smoke alarm',
     'Fire alarm',
     'CO2 alarm',
-	'Generator'
+    'Generator',
+    'Inverter control'
 ]
 
 # Translations. The text will be used only for GetText, it will be translated
@@ -357,6 +358,10 @@ class Generator(PinAlarm):
     type_id = 9
     translation = 5 # running, stopped
 
+class InverterControl(PinAlarm):
+    _product_name = "Inverter control"
+    type_id = 10 
+    translation = 1 #on, off
 
 def dbusconnection():
     return SessionBus() if 'DBUS_SESSION_BUS_ADDRESS' in os.environ else SystemBus()
